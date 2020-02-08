@@ -47,9 +47,9 @@ wc = wordcloud.WordCloud(
     mask=mask, # 设置背景图
     max_words=75, # 最多显示词数
     max_font_size=233, # 字体最大值
-    width=1920,
+    width=1920,	#图片宽度
     height=1080,
-    background_color=(255,255,255)
+    background_color=(255,255,255)	#背景色为白色
 )
 
 wc.generate_from_frequencies(word_counts) # 从字典生成词云
@@ -57,7 +57,7 @@ image_colors = wordcloud.ImageColorGenerator(mask) # 从背景图建立颜色方
 wc.recolor(color_func=image_colors) # 将词云颜色设置为背景图方案
 plt.imshow(wc) # 显示词云
 plt.axis('off') # 关闭坐标轴
-plt.savefig("temp.png",dpi=500,bbox_inches = 'tight')
+plt.savefig("temp.png",dpi=500,bbox_inches = 'tight')	#保存为高清图
 plt.show() # 显示图像
 plt.close()
 
